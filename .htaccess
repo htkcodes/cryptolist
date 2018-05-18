@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^faucets$ faucets.php [NC]
+RewriteRule ^coin/(.*)$ coin.php?code=$1 [NC]
