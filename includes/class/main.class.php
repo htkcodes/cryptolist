@@ -12,7 +12,7 @@ Class Main {
              CURLOPT_URL => $url,
              CURLOPT_USERAGENT => 'Agent'
          ));
-
+       
          return curl_exec($curl);
 
          curl_close($curl);
@@ -24,6 +24,7 @@ Class Main {
          global $request_type, $purge_cache, $limit_reached, $request_limit;
 
          $cache_file = dirname(__FILE__) . '/data/coins.json';
+      
          $expires    = time() - $ctime;
 
          if (!file_exists($cache_file))
@@ -32,6 +33,7 @@ Class Main {
          if (filectime($cache_file) < $expires || file_get_contents($cache_file) == '' || $purge_cache && intval($_SESSION['views']) <= $request_limit) {
              $query = 'http://coincap.io/front';
              $api_results  = $this->request($query);
+        
              $json_results = $api_results;
 
              if ($api_results && $json_results)

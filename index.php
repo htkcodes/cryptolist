@@ -29,6 +29,7 @@ $main = New Main();
 
 $data = json_decode($main->jsonCache('300'), 2);
 
+
 foreach($data as $coin) {
   echo '<tr id="BTC_' . $coin['short'] . '" data-name="' . $coin['long'] . '" role="row" class="odd">
   <td><span class="sprite sprite-' .  str_replace(' ', '', strtolower($coin['long'])) . ' small_coin_logo"></span> <strong><a href="' . 'coin/' . $coin['short'] . '">' . $coin['long'] . '</a></strong></td>
@@ -52,4 +53,4 @@ require_once('includes/templates/footer.php');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" language="javascript" src="assets/js/ember.js"></script>
+<script type="text/javascript" language="javascript" src="assets/js/main.js"></script>

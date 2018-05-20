@@ -2,7 +2,7 @@
 
 
 $config = array(
-	'url' => '/crypto',
+	'url' => 'http://cryptolist.rf.gd',
 );
 
 
